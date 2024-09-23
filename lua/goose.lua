@@ -9,6 +9,7 @@ local on_exit = function(code, signal)
 	end
 end
 
+local honk_audio = vim.api.nvim_get_runtime_file("./honk-sound.mp3", false)[1]
 local waddle = function(goose, speed)
 	local timer = vim.loop.new_timer()
 	local new_goose = { name = goose, timer = timer, honk = false }
@@ -32,7 +33,7 @@ local waddle = function(goose, speed)
 					g.honk = true
 					vim.loop.spawn(
 						"ffplay",
-						{ args = { "-v", "0", "-nodisp", "-autoexit", "./honk-sound.mp3" } },
+						{ args = { "-v", "0", "-nodisp", "-autoexit", honk_audio } },
 						function(code, signal)
 							on_exit(code, signal)
 							g.honk = false
@@ -120,5 +121,11 @@ end
 M.setup = function(opts)
 	conf = vim.tbl_deep_extend("force", conf, opts or {})
 end
+vim.keymap.set("n", "<leader>GG", function()
+	require("goose").hatch()
+end, {})
+vim.keymap.set("n", "<leader>GK", function()
+	require("goose").cook()
+end, {})
 
 return M
