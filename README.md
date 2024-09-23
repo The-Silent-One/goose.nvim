@@ -24,7 +24,7 @@ a goose that rains terror on your vim IDE
 
 ## About
 
-![goose](./media/run.mp4)
+https://github.com/user-attachments/assets/f5ace02a-278e-4b24-b08d-d7f7f94893d5
 
 a neovim plugin that brings a goose that moves and honkes and keeps you entertained. This plugin was inspired by [duck.nvim](https://github.com/tamton-aquib/duck.nvim).
 
