@@ -32,7 +32,9 @@ a neovim plugin that brings a goose that moves and honkes and keeps you entertai
 
 ## Installation
 
-add the plugin to your init.lua file like this:
+You need to install ffplay ([ffmpeg](https://www.ffmpeg.org)) first.
+
+Add the plugin to your init.lua file like this:
 
 ![installation](./media/install.png)
 
