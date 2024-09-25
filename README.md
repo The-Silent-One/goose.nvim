@@ -36,7 +36,19 @@ You need to install ffplay ([ffmpeg](https://www.ffmpeg.org)) first.
 
 Add the plugin to your init.lua file like this:
 
-![installation](./media/install.png)
+```
+{
+    'The-Silent-One/goose.nvim',
+    config = function()
+      vim.keymap.set('n', '<leader>GG', function()
+        require('goose').hatch()
+      end, {})
+      vim.keymap.set('n', '<leader>GK', function()
+        require('goose').cook()
+      end, {})
+    end,
+  },
+```
 
 You should configure the keymaps inside the config function
 
